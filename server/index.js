@@ -25,8 +25,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 /* Cargar las rutas */
 app.use('/', routes());
 
-const host = process.env.HOST;
-const port = process.env.PORT;
+const host = process.env.HOST || '0.0.0.0';
+const port = process.env.PORT || 3000;
 console.log(host, port);
 app.listen(port, host, () => {
   console.log('El servidor esta funcionando');
