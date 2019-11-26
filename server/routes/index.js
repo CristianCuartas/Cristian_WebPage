@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const Mensajes = require('../models/Mensajes');
 
 module.exports = function() {
   router.get('/', (req, res) => {
@@ -31,13 +32,13 @@ module.exports = function() {
       });
     } else {
       //Almacena en la BD
-      //   Testimonial.create({
-      //     nombre,
-      //     correo,
-      //     mensaje
-      //   })
-      //     .then(testimonial => res.redirect('/testimoniales'))
-      //     .catch(error => console.log(error));
+      Mensajes.create({
+        nombre,
+        correo,
+        mensaje
+      })
+        .then(mensaje => res.redirect('/#mis-trabajos'))
+        .catch(error => console.log(error));
     }
   });
 
