@@ -1,0 +1,148 @@
+extends ../layout/index
+block contenido
+        a(target="_blank" id="whatsapp" href="https://wa.me/573213118257")
+            img(src="/Imagenes/whatsapp.png" alt="")
+        header
+            div(class="menu")
+                div(class="contenedor")
+                    p(class="logo") CRISTIAN HERNANDEZ
+                    img(class="menu-icon" src="/Imagenes/menu.png" alt="")
+                    nav
+                        ul(class="lista-menu")
+                            li  
+                                a(href="#sobre-mi") Sobre mi
+                            li 
+                                a(href="#servicios") Servicios
+                            li 
+                                a(href="#mis-trabajos") Mis trabajos
+                            li
+                                a(href="#por-que-trabajar") ¿Por qué trabajar conmigo?
+                            li 
+                                a(href="#contacto") Contacto
+            div(class="contenedor" id="contenedor-titulo-flex")
+                div(class="contenedor-titulo")
+                    h1 Cristian Hernandez
+                    h2 Desarrollador de software
+                    a(href="#mis-trabajos") VER MIS TRABAJOS
+        main
+            section(id="sobre-mi")
+                div(class="contenedor")
+                    h3 Sobre mi
+                    div(class="contenedor-sobremi")
+                        div(class="imagen-sobremi")
+                            img(src="/Imagenes/gifIdea.gif" alt="")
+                        div(class="texto")
+                            p Mi nombre es Cristian y tengo 19 años, soy chico joven y apasionado por colocar en marcha mis ideas, habitualmente me enfoco en la constante actualización de conocimientos además de mantener conversaciones con otras personas que me ayuden a mejorar habilidades en mi crecimiento profesional.
+                            p Me dedico actualmente al desarrollo de software como programador web, empleando las últimas tecnologías JavaScript con uno de sus frameworks React JS, además del manejo de Wordpress, HTML y CSS3. En mi entorno uso manejadores de paquetes y repositorios en la nube GitHub, además de hacer deployment a servidores online para qué pueda visualizar el trabajo que se desarrolla. Si estas buscando hacer una página web con las últimas tecnologías realmente brillante, funcional y a tu gusto entonces llegaste al lugar correcto.        
+                            p Podrás ponerte en contacto conmigo a través de mi correo electrónico o completando el formulario de contacto aquí mismo en mi página web, yo me encargo del resto.
+                            a(href="#mis-trabajos") VER MIS TRABAJOS
+            section(id="servicios")
+                div(class="contenedor")
+                h3 Servicios
+                div(class="contenedor-servicios")
+                    div(class="servicio card1")
+                        h4 Diseño Web
+                        p Páginas web que resalten lo que deseas inspirar, desarrollaré tu idea. La importancia del diseño web es fundamental para tener éxito y atraer a las personas creándole una experencia dentro dentro del sitio.       
+                        img(src="/Imagenes/html-logo.png" alt="" class="icono")
+                    div(class="servicio card2")
+                        h4 Responsive desing
+                        p El diseño web adaptable, es una filosofía de diseño y desarrollo cuyo objetivo es adaptar la apariencia de las páginas web al dispositivo que se esté utilizando para visitarlas.                    
+                        img(src="/Imagenes/css-logo.png" alt="" class="icono")      
+                    div(class="servicio card3")
+                        h4 SEO
+                        p El posicionamiento en buscadores, optimización en motores de búsqueda es un conjunto de acciones orientadas a mejorar el posicionamiento de un sitio web en la lista de resultados de Google, Bing, u otros buscadores de internet.​                        
+                        img(src="/Imagenes/wordpress-logo.png" alt="" id="wordpress-logo" class="icono")     
+                    div(class="servicio card4")
+                        h4 Gestión de paquetes
+                        p Herramientas esenciales de desarrollo de JavaScript, npm es la herramienta utilizada por más de 11,000,000 desarrolladores de JavaScript en todo el mundo. Sus desarrolladores ya lo usan.                        
+                        img(src="/Imagenes/npm-logo.png" alt="" id="npm-logo" class="icono")        
+                    div(class="servicio card5")
+                        h4 Platform as a Service
+                        p Heroku es uno de los PaaS más utilizados en la actualidad en entornos empresariales por su fuerte enfoque en resolver el despliegue de una aplicación. Ademas te permite manejar los servidores y sus configuraciones, escalamiento y la administración. A Heroku solo le dices qué lenguaje de backend estás utilizando o qué base de datos vas a utilizar y te preocupas únicamente por el desarrollo de tu aplicación.                        
+                        img(src="/Imagenes/heroku-logo.png" alt="" class="icono")
+                    div(class="servicio card6")
+                        h4 React JS
+                        p React es una biblioteca Javascript para crear interfaces de usuario enfocada en la visualización.     
+                        img(src="/Imagenes/react-logo.png" alt="" class="icono")
+            section(id="mis-trabajos")
+                div(class="contendor")
+                    h3 Mis trabajos
+                    div(class="contenedor-mistrabajos")
+                        div(class="imagen-perfilGith")
+                            img(src="Imagenes/perfil-github.PNG" alt="")          
+                        div(class="texto")
+                            p Te invito a visitar mis repositorios en GitHub donde pordras encontrar los trabajos qué he realizado y los proyectos a los qué he brindado apoyo en su desarrollo.
+                            img(src="/Imagenes/github.png" id="gitHubLogo")    
+                            a(href="https://github.com/CristianCuartas" target="_blank" id="link-github") Cristian Cuartas
+            section(id="por-que-trabajar")
+                div(class="contenedor")
+                    h3 ¿Por qué trabajar conmigo?
+                    div(class="contendor-trabajar")
+                        div(class="item-trabajar")
+                            ul
+                                li
+                                    img(src="/Imagenes/clock.png")
+                                li Velocidad
+                                li Me aseguro de que tu web cargue entre 2 y 4 segundos (depende la cantidad de contenido del sitio). Si una web tarda más de 5 segundos en cargar, el 70% de los usuarios lo cierra y no vuelve a entrar más.
+                        div(class="item-trabajar")
+                            ul
+                                li
+                                    img(src="/Imagenes/network.png" alt="")
+                                li Asesoramiento
+                                li Mantengo una comunicación constante con mi cliente, para enseñarle a modificar contenido mediante el panel de Wordpress o para cualquier duda / cambios que quiera hacer en su sitio web.        
+                        div(class="item-trabajar")
+                            ul
+                                li
+                                    img(src="/Imagenes/smartphone.png" alt="")
+                                li Mobile Priority
+                                li Cada vez más personas navegan desde sus celulares en cualquier parte del mundo. Me aseguro de que tu web esté optimizado para cualquier tipo de dispositivo móvil.
+            section(id="blog")
+                div(class="contendor")
+                    h3 Blog
+                    div(class="contendor-publicaciones")
+                        div(class="publicacion")
+                            img(src="/Imagenes/blog2.jpg" alt="")
+                            div(class="contenido")
+                                h4 No alcanza con solo tener una página web
+                                p ¿Quieres aprender cuales son las herramientas que usan las mejores marcas para generar tráfico?
+                                a(href="") Leer más
+                        div(class="publicacion")
+                            img(src="/Imagenes/blog1.jpg" alt="")
+                            div(class="contenido")
+                                h4 ¿Qué es el remarketing y como utilizarlo?
+                                p El remarketing es una de las técnicas más utilizadas por las mejores compañías! ¿Quieres saber de qué se trata?
+                                a(href="") Leer más   
+            section(id="que-esperas")
+                div(class="contenedor")
+                    h3 ¿Qué esperas para tener tu página web?
+                    a(href="#contacto") CHARLEMOS
+            section(id="contacto")
+                div(class="contenedor")
+                    h3 Contacto              
+                    if(errores)
+                        each error in errores
+                            .alert.alert-danger.text-center=error.mensaje
+                    form(action="/" method="POST")                  
+                        input(id="nombre" type="text" placeholder="Nombre" name="nombre", value=nombre)                   
+                        input(id="correo" type="text" placeholder="Correo electrónico" name="correo", value=correo)                    
+                        textarea#mensaje(placeholder="Mensaje" name="mensaje")=mensaje
+                        input(type="submit" value="ENVIAR MENSAJE")
+                    div(class="contacto-info")
+                        div(class="mail")
+                            img(src="/Imagenes/gmail.png" alt="") 
+                            a cristianhz1109@gmail.com
+                        div(class="linkedin")
+                            img(src="/Imagenes/linkedin.png" alt="")
+                            a(class="perfil-linkedin" href="https://www.linkedin.com/in/cristian-cuartas-hernandez-923314193/" target="_blank") Cristian Cuartas Hernandez
+        footer
+            div(class="contendor")
+                div(class="redes")
+                    a( href="")
+                        img(src="/Imagenes/github-logoF.png" alt="Imagen github")
+                    a(href="")
+                        img(src="/Imagenes/gmail.png" alt="Imagen gmail")
+                    a(href="")
+                        img(src="/Imagenes/linkedin.png" alt="Imagen linkedin")
+                div(class="parrafo")
+                    img(id="footer-img" src="/Imagenes/footer-img-face.png" alt="Imagen RICK")
+                    p(id="footer-parrafo") Cristian Hernandez | Análista de desarrollo - Técnico profesional en programación de software.

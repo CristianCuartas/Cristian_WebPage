@@ -1,0 +1,579 @@
+body {
+  margin: 0;
+}
+
+header .contenedor {
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  width: 90%;
+  margin: auto;
+  font-size: 15px;
+}
+
+header .lista-menu {
+  display: flex;
+}
+
+header ul li {
+  list-style: none;
+  margin-right: 15px;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  background: linear-gradient(rgba(84, 93, 220, 0.9), rgba(96, 171, 245, 0.9)),
+    url(./../Imagenes/fondo.jpg);
+  height: 100vh;
+  background-size: contain;
+}
+
+#contenedor-titulo-flex {
+  display: flex;
+  justify-content: center;
+  margin: 18vh 0;
+  max-width: 1580px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 60px;
+  color: #ffffff;
+  font-family: 'Bungee Shade', cursive;
+  margin: 0;
+}
+
+h2 {
+  font-size: 40px;
+  color: #ffffff;
+  font-family: 'Megrim', cursive;
+  text-align: center;
+}
+
+.contenedor-titulo {
+  text-align: center;
+}
+
+.contenedor-titulo a,
+#sobre-mi a,
+#blog a,
+#que-esperas a,
+#contacto input[type='submit'] {
+  text-decoration: none;
+  font-size: 14px;
+  color: #ffffff;
+  background: #5cb8ff;
+  padding: 14px 24px;
+  width: 128px;
+  display: inline-block;
+}
+
+p.logo {
+  color: #ffffff;
+  font-size: 20px;
+}
+
+nav ul li a {
+  color: #ffffff;
+}
+
+/*Sección sobre mi*/
+
+h3 {
+  text-align: center;
+  font-size: 55px;
+  font-weight: bold;
+  font-family: 'Bungee Shade', cursive;
+}
+
+#sobre-mi .contenedor-sobremi {
+  display: flex;
+  justify-content: space-around;
+}
+
+#sobre-mi .imagen-sobremi {
+  width: 40%;
+}
+
+#sobre-mi .texto {
+  width: 42%;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*Sección servicios*/
+
+.contenedor-servicios {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.servicio #wordpress-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.servicio #npm-logo {
+  height: 32px;
+  width: 70px;
+}
+
+.servicio {
+  width: 24%;
+  padding: 34px 30px 38px 30px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+.servicio h4 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.servicio p {
+  margin-bottom: 20px;
+  height: 194px;
+}
+
+.contenedor-servicios .card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6 {
+  box-shadow: 0 12px 30px 0 rgba(80, 85, 223, 0.37);
+  font-family: 'Open Sans', sans-serif;
+  /* font-weight: bold; */
+}
+
+.contenedor-servicios .card1 h4,
+.card2 h4,
+.card3 h4,
+.card4 h4,
+.card5 h4,
+.card6 h4 {
+  color: orangered;
+}
+
+.contenedor-servicios .card1 p,
+.card2 p,
+.card3 p,
+.card4 p,
+.card5 p,
+.card6 p {
+  color: white;
+  font-size: 16px;
+}
+
+.contenedor-servicios .card1 {
+  background: url(./../Imagenes/card6.jpg);
+  background-size: cover;
+}
+
+.contenedor-servicios .card2 {
+  background: url(./../Imagenes/card4.jpg);
+  background-size: cover;
+}
+
+.contenedor-servicios .card3 {
+  background: url(./../Imagenes/card6.jpg);
+  background-size: cover;
+}
+
+.contenedor-servicios .card4 {
+  background: url(./../Imagenes/card4.jpg);
+  background-size: cover;
+}
+
+.contenedor-servicios .card5 {
+  background: url(./../Imagenes/card6.jpg);
+  background-size: cover;
+}
+
+.contenedor-servicios .card6 {
+  background: url(./../Imagenes/card4.jpg);
+  background-size: cover;
+}
+
+.icono {
+  float: right;
+}
+
+/* SECCIÓN MIS TRABAJOS */
+button.owl-prev,
+button.owl-next {
+  font-size: 60px !important;
+}
+
+span {
+  color: cornflowerblue;
+}
+
+.item {
+  width: 150px;
+}
+
+.contenedor-mistrabajos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.imagen-perfilGith {
+  width: 10%;
+}
+
+.contenedor-mistrabajos .texto {
+  width: 42%;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 60px;
+}
+
+#gitHubLogo {
+  width: 60px;
+  margin-left: 250px;
+}
+
+#link-github {
+  margin-left: 120px;
+  text-decoration: none;
+  font-family: 'Monoton', cursive;
+  color: #b68ee1;
+  font-size: 30px;
+}
+
+/*SECCIÓN TRABAJAR CONMIGO*/
+.contendor-trabajar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#por-que-trabajar .item-trabajar {
+  width: 28%;
+  text-align: center;
+}
+
+#por-que-trabajar ul li {
+  list-style: none;
+}
+
+#por-que-trabajar ul li:nth-child(2) {
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#por-que-trabajar ul li:nth-child(3) {
+  line-height: 31px;
+}
+
+/* SECCIÓN BLOG*/
+#blog {
+  background: #f9fafc;
+}
+
+#blog .contendor-publicaciones {
+  display: flex;
+  justify-content: space-around;
+}
+
+#blog .publicacion {
+  width: 30%;
+  box-shadow: 1px 1px 14px #ccc;
+}
+#blog img {
+  width: 100%;
+}
+
+#blog .contenido {
+  background: white;
+  padding: 20px;
+}
+
+#blog h4 {
+  font-size: 23px;
+  margin-bottom: 15px;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#blog p {
+  color: #5a6169;
+  line-height: 24px;
+  font-size: 16px;
+}
+
+#blog a {
+  width: 60px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*SECCIÓN QUÉ ESPERAS*/
+
+#que-esperas {
+  background: linear-gradient(rgba(84, 93, 220, 0.94), rgba(96, 171, 245, 0.9));
+  text-align: center;
+  padding: 50px 0;
+  margin-top: 40px;
+}
+
+#que-esperas h3 {
+  font-size: 30px;
+  color: white;
+}
+#que-esperas a {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+/*SECCIÓN CONTACTO*/
+
+#contacto form {
+  width: 77%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+input[type='text'],
+input[type='email'] {
+  width: 49%;
+  margin-bottom: 15px;
+  padding: 18px 0;
+  border: 0;
+  border-bottom: 1px solid #5cb8ff;
+  font-size: 17px;
+}
+textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 18px 0;
+  border: 0;
+  border-bottom: 1px solid #5cb8ff;
+  font-size: 17px;
+}
+#contacto input[type='submit'] {
+  width: 166px;
+  margin: auto;
+}
+.contacto-info {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.contacto-info img {
+  width: 28px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+footer {
+  background: #000000;
+  padding: 40px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+footer .contenedor {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer img {
+  vertical-align: middle;
+  margin: 0 40px;
+  transform: rotate(0);
+}
+footer img:hover {
+  transform: rotate(360deg);
+  transition: 0.4s;
+}
+
+#footer-parrafo {
+  color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 30px;
+}
+
+.perfil-linkedin {
+  text-decoration: none;
+}
+
+/*ICONO WHATSAPP*/
+#whatsapp {
+  position: fixed;
+  top: 77%;
+  right: 1%;
+}
+/*ICONO RICK*/
+#footer-img {
+  width: 150px;
+  height: 150px;
+  vertical-align: middle;
+  /* position: fixed; */
+  /* top: 40%;
+  left: 1%; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#sobre-mi,
+#servicios,
+#mis-trabajos,
+#por-que-trabajar,
+#contacto {
+  padding: 40px 0;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .menu-icon {
+    display: block;
+    float: right;
+    width: 40px;
+    height: 35px;
+    margin-top: 15px;
+  }
+
+  header nav {
+    position: absolute;
+    top: 83px;
+    left: 0;
+    height: 268px;
+    width: 100%;
+    display: none;
+  }
+
+  header nav ul {
+    flex-direction: column;
+  }
+
+  header nav ul li {
+    margin-bottom: 15px;
+  }
+  h1 {
+    font-size: 44px;
+  }
+  h2 {
+    font-size: 19px;
+  }
+
+  #sobre-mi .contenedor-sobremi {
+    flex-direction: column;
+  }
+
+  #sobre-mi img {
+    width: 100%;
+    margin-left: 120px;
+  }
+  #sobre-mi .texto {
+    width: 88%;
+    text-align: justify;
+    margin-left: 20px;
+  }
+
+  #servicios {
+    flex-direction: column;
+  }
+  .contenedor-servicios .card1,
+  .card2,
+  .card3,
+  .card4,
+  .card5,
+  .card6 {
+    width: 70%;
+  }
+  h3 {
+    font-size: 43px;
+  }
+  .icono {
+    float: right;
+    margin-top: 23px;
+  }
+
+  .contenedor-mistrabajos {
+    flex-direction: column;
+  }
+  .imagen-perfilGith {
+    width: 10%;
+    margin-left: 70px;
+  }
+  .contenedor-mistrabajos .texto {
+    width: 88%;
+    text-align: justify;
+    margin-left: 20px;
+  }
+  #gitHubLogo {
+    margin-left: 150px;
+  }
+  #link-github {
+    margin-left: 42px;
+    font-size: 26px;
+  }
+  .contendor-trabajar {
+    flex-direction: column;
+  }
+  #por-que-trabajar .item-trabajar {
+    width: 100%;
+  }
+  .item-trabajar ul {
+    padding: 0;
+  }
+  .contendor-publicaciones {
+    flex-direction: column;
+  }
+  #blog .publicacion {
+    width: 100%;
+  }
+  #contacto form {
+    margin: 0 37px;
+    flex-direction: column;
+    width: 80%;
+  }
+  input[type='text'],
+  input[type='email'] {
+    width: 100%;
+  }
+  footer img {
+    vertical-align: middle;
+    margin: 0px 27px;
+    transform: rotate(0);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 800px) {
+  header {
+    height: 70vh;
+  }
+  .imagen-perfilGith {
+    width: 36%;
+    margin: auto;
+  }
+  #gitHubLogo {
+    margin-left: 320px;
+    margin-top: 30px;
+    width: 95px;
+  }
+  #link-github {
+    margin-left: 228px;
+  }
+}
