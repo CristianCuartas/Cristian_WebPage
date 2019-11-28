@@ -121,9 +121,9 @@ block contenido
                     h3 Contacto              
                     if(errores)
                         each error in errores
-                            .alert.alert-danger.text-center=error.mensaje
-                    form(action="/" method="POST")                  
-                        input(id="nombre" type="text" placeholder="Nombre" name="nombre", value=nombre)                   
+                            p=error.mensaje
+                    form(action="/" method="POST")                              
+                        input(id="nombre" type="text" placeholder="Nombre" name="nombre", value=nombre onchange:validar(e))                   
                         input(id="correo" type="text" placeholder="Correo electrónico" name="correo", value=correo)                    
                         textarea#mensaje(placeholder="Mensaje" name="mensaje")=mensaje
                         input(type="submit" value="ENVIAR MENSAJE")
@@ -147,5 +147,6 @@ block contenido
                     img(id="footer-img" src="/Imagenes/footer-img-face.png" alt="Imagen RICK")
                     p(id="footer-parrafo") Cristian Hernandez | Análista de desarrollo - Técnico profesional en programación de software.
         script(src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous")
-        script 
+        script
             include script.js
+        
