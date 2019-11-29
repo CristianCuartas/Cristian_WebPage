@@ -13,6 +13,8 @@ const mg = mailgun({
   domain: DOMAIN
 });
 
+const pathHeroku = 'https://cristianwebpage.herokuapp.com/';
+
 module.exports = function() {
   router.get('/', (req, res) => {
     res.render('index');
@@ -101,7 +103,7 @@ module.exports = function() {
         to: 'ccuartashz@gmail.com',
         subject: 'CH | Cristian Hernandez Contact Request',
         html: outputAdmin,
-        inline: '/Imagenes/footer-img.png'
+        inline: `${pathHeroku}/Imagenes/footer-img.png`
       };
 
       const mailOptions = {
@@ -112,7 +114,7 @@ module.exports = function() {
         attachments: [
           {
             filename: 'Pickle_rick.png',
-            path: '/Imagenes/Pickle_rick.png',
+            path: `${pathHeroku}/Imagenes/Pickle_rick.png`,
             cid: 'Pickle_rick.png' //same cid value as in the html img src
           }
         ]
