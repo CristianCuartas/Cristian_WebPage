@@ -380,7 +380,18 @@ textarea {
   vertical-align: middle;
   margin-right: 10px;
 }
-
+#validaciones-form {
+  font-size: 15px;
+  font-family: 'Bungee Shade', cursive;
+  color: black;
+  display: flex;
+  margin-left: 560px;
+  text-align: center;
+  background: #f57373;
+  padding: 5px 10px;
+  width: 200px;
+  border-radius: 10px;
+}
 footer {
   background: #000000;
   padding: 40px 0;
@@ -554,7 +565,6 @@ html {
     width: 100%;
   }
   footer img {
-    vertical-align: middle;
     margin: 0px 27px;
     transform: rotate(0);
   }
