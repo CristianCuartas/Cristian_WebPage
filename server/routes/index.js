@@ -101,7 +101,7 @@ module.exports = function() {
         to: 'ccuartashz@gmail.com',
         subject: 'CH | Cristian Hernandez Contact Request',
         html: outputAdmin,
-        inline: './../../public/Imagenes/footer-img.png'
+        inline: '/Imagenes/footer-img.png'
       };
 
       const mailOptions = {
@@ -112,7 +112,7 @@ module.exports = function() {
         attachments: [
           {
             filename: 'Pickle_rick.png',
-            path: './../../public/Imagenes/Pickle_rick.png',
+            path: '/Imagenes/Pickle_rick.png',
             cid: 'Pickle_rick.png' //same cid value as in the html img src
           }
         ]
