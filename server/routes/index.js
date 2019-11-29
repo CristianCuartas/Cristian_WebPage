@@ -6,14 +6,6 @@ const { check, validationResult } = require('express-validator');
 const nodemailer = require('nodemailer');
 const USER_EMAIL = 'ccuartashz@gmail.com';
 const PASS_EMAIL = 'ccuartas-zH0';
-const mailgun = require('mailgun-js');
-const credentials = require('../config/credentials');
-
-const DOMAIN = credentials.DOMAIN_MAILGUN;
-const mg = mailgun({
-  apiKey: credentials.API_KEY,
-  domain: DOMAIN
-});
 const resolve = require('path').resolve;
 
 module.exports = function() {
@@ -104,25 +96,21 @@ Path absoluto en node para acceder a la carpeta
     </div>
       `;
 
-      // const dataAdmin = {
-      //   from:
-      //     '"CH | Contact" <postmaster@sandboxeb686e4318a2442386457d2702d8c47f.mailgun.org>',
-      //   to: 'ccuartashz@gmail.com',
-      //   subject: 'CH | Cristian Hernandez Contact Request',
-      //   html: outputAdmin,
-      //   inline: `${pathHeroku}Imagenes/footer-img.png`
-      // };
-
-      const dataAdmin = {
-        from:
-          '"CH | Contact" <postmaster@sandboxeb686e4318a2442386457d2702d8c47f.mailgun.org>',
-        to: 'ccuartashz@gmail.com',
-        subject: 'CH | Cristian Hernandez Contact Request',
-        html: outputAdmin,
-        inline: resolve('public/Imagenes/footer-img.png')
+      const mailOptionsAdmin = {
+        from: `"CH | Contact" ${USER_EMAIL}`, // sender address
+        to: `${USER_EMAIL}`, // list of receivers
+        subject: 'CH | Cristian Hernandez SContact Request', // Subject line
+        html: outputAdmin, // html body,
+        attachments: [
+          {
+            filename: 'footer-img.png',
+            path: resolve('public/Imagenes/footer-img.png'),
+            cid: 'footer-img.png' //same cid value as in the html img src
+          }
+        ]
       };
 
-      const mailOptions = {
+      const mailOptionsUser = {
         from: `"CH | Contact" ${USER_EMAIL}`, // sender address
         to: `${correo}`, // list of receivers
         subject: 'CH | Cristian Hernandez Solicitud de Contacto', // Subject line
@@ -168,16 +156,15 @@ Path absoluto en node para acceder a la carpeta
           .then(mensaje => res.redirect('/#mis-trabajos'))
           .catch(error => console.log(error));
 
-        //Mailgun
-        mg.messages().send(dataAdmin, function(error, body) {
-          try {
-            console.log(body);
-          } catch {
-            console.log(error);
+        transporter.sendMail(mailOptionsAdmin, (error, info) => {
+          if (error) {
+            return console.log(error);
           }
+          console.log('Message sent: %s', info.messageId);
+          console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
         });
 
-        transporter.sendMail(mailOptions, (error, info) => {
+        transporter.sendMail(mailOptionsUser, (error, info) => {
           if (error) {
             return console.log(error);
           }
