@@ -470,6 +470,7 @@ html {
     height: 268px;
     width: 100%;
     display: none;
+    /* margin-top: 0; */
   }
 
   header nav ul {
