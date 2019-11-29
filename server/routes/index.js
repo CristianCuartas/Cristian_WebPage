@@ -98,7 +98,7 @@ Path absoluto en node para acceder a la carpeta
       const mailOptionsAdmin = {
         from: `"CH | Contact" ${USER_EMAIL}`, // sender address
         to: `${USER_EMAIL}`, // list of receivers
-        subject: 'CH | Cristian Hernandez SContact Request', // Subject line
+        subject: 'CH | Cristian Hernandez Contact Request', // Subject line
         html: outputAdmin, // html body,
         attachments: [
           {
