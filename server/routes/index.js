@@ -1,8 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const Mensajes = require('../models/Mensajes');
-const nodemailer = require('nodemailer');
 const { check, validationResult } = require('express-validator');
+/* Envio de EMAILS */
+const nodemailer = require('nodemailer');
+const USER_EMAIL = 'ccuartashz@gmail.com';
+const PASS_EMAIL = 'ccuartas-zH0';
+const mailgun = require('mailgun-js');
+const DOMAIN = 'sandboxeb686e4318a2442386457d2702d8c47f.mailgun.org';
+const mg = mailgun({
+  apiKey: '95e1870cef2949acfa95626e6d5841db-e470a504-edb08715',
+  domain: DOMAIN
+});
 
 module.exports = function() {
   router.get('/', (req, res) => {
@@ -45,40 +54,84 @@ module.exports = function() {
         errores.push({ mensaje: 'Agrega tu mensaje' });
       }
 
-      // Envío de email
-      const output = `
-        <p>You have a new contact request</p>
-        <h3>Contact Details</h3>
-        <ul>  
-          <li>Nombre: ${nombre}</li>
-          <li>Correo electrónico: ${correo}</li>
-        </ul>
-        <h3>Mensaje</h3>
-        <p>${mensaje}</p>
+      const outputAdmin = `
+      <div
+        style="width:100%;
+      box-shadow: 1px 1px 14px #ccc;"
+      >
+        <img
+          src="cid:footer-img.png"
+          alt=""
+          style="width: 80%; margin-left: 40px;"
+        />
+        <div style="background: white;padding: 20px;">
+          <h2>
+            Tienes una nueva solicitud de contacto
+          </h2>
+
+          <h3>Detalles del contacto</h3>
+          <ul>
+            <li>Nombre: ${nombre}</li>
+            <li>Correo electrónico: ${correo}</li>
+          </ul>
+          <h3>Mensaje</h3>
+          <p>${mensaje}</p>
+        </div>
+      </div>
       `;
 
-      // Crear objeto transportador reutilizable utilizando el transporte SMTP predeterminado
+      const outputUser = `
+    <div style="width: 100%;
+      box-shadow: 1px 1px 14px #ccc;">
+      <img src="cid:Pickle_rick.png" alt="" style="width: 40%; margin-left: 40px;" />
+      <div style="background: white;padding: 20px;">
+        <h2>
+          Hola ${nombre}!
+        </h2>
+        <h3>Soy Cristian Hernandez desarrollador de software.</h3>
+        <p>Tu información de contacto se ha enviado exitosamente.</p>
+        <p>Atenderé tu solicitud poniendome en contacto contigo por medio de mi correo electronico:</p>
+        <span><b>ccuartashz@gmail.com</b></span>
+      </div>
+    </div>
+      `;
+      const dataAdmin = {
+        from:
+          '"CH | Contact" <postmaster@sandboxeb686e4318a2442386457d2702d8c47f.mailgun.org>',
+        to: 'ccuartashz@gmail.com',
+        subject: 'CH | Cristian Hernandez Contact Request',
+        html: outputAdmin,
+        inline:
+          'C:/Users/Desarrollo3/Desktop/Proyectos/PUG JS WebPage/public/Imagenes/footer-img.png'
+      };
+
+      const mailOptions = {
+        from: `"CH | Contact" ${USER_EMAIL}`, // sender address
+        to: `${correo}`, // list of receivers
+        subject: 'CH | Cristian Hernandez Solicitud de Contacto', // Subject line
+        html: outputUser, // html body,
+        attachments: [
+          {
+            filename: 'Pickle_rick.png',
+            path:
+              'C:/Users/Desarrollo3/Desktop/Proyectos/PUG JS WebPage/public/Imagenes/Pickle_rick.png',
+            cid: 'Pickle_rick.png' //same cid value as in the html img src
+          }
+        ]
+      };
+
       let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-          user: `${process.env.USER_EMAIL}`, // generated ethereal user
-          pass: `${process.env.PASS_EMAIL}` // generated ethereal password
+          user: `${USER_EMAIL}`, // generated ethereal user
+          pass: `${PASS_EMAIL}` // generated ethereal password
         },
         tls: {
           rejectUnauthorized: false
         }
       });
-
-      // configurar datos de correo electrónico con símbolos Unicode
-      const mailOptions = {
-        from: `"CH | Contact" ${process.env.USER_EMAIL}`, // sender address
-        to: [`${process.env.USER_EMAIL}`], // list of receivers
-        subject: 'CH | Cristian Hernandez Contact Request', // Subject line
-        text: 'Hello world [(?)]', // plain text body
-        html: output // html body
-      };
 
       //Revisar por errores
       const errors = validationResult(req);
@@ -98,7 +151,11 @@ module.exports = function() {
         })
           .then(mensaje => res.redirect('/#mis-trabajos'))
           .catch(error => console.log(error));
-        // enviar correo con objeto de transporte definido
+        //Mailgun
+        mg.messages().send(dataAdmin, function(error, body) {
+          console.log(body);
+        });
+
         transporter.sendMail(mailOptions, (error, info) => {
           if (error) {
             return console.log(error);
