@@ -20,6 +20,8 @@ $(document).ready(function() {
   });
   $('.menu-icon').click(function() {
     $('header nav').slideToggle();
+
     $('header nav').css({ background: '#979CBF' });
+    $('header nav').css({ opacity: 0.9 });
   });
 });
