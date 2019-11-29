@@ -11,7 +11,6 @@ const resolve = require('path').resolve;
 module.exports = function() {
   router.get('/', (req, res) => {
     res.render('index');
-    // console.log(resolve('public/Imagenes/Pickle_rick.png'));
   });
 
   /* Cuando se llena el formulario */
@@ -58,7 +57,7 @@ module.exports = function() {
         <img
           src="cid:footer-img.png"
           alt=""
-          style="width: 80%; margin-left: 40px;"
+          style="width: 15%; margin-left: 40px;"
         />
         <div style="background: white;padding: 20px;">
           <h2>
@@ -83,7 +82,7 @@ Path absoluto en node para acceder a la carpeta
       const outputUser = `
     <div style="width: 100%;
       box-shadow: 1px 1px 14px #ccc;">
-      <img src="cid:Pickle_rick.png" alt="" style="width: 40%; margin-left: 40px;" />
+      <img src="cid:Pickle_rick.png" alt="" style="width: 10%;  margin-left: 40px;" />
       <div style="background: white;padding: 20px;">
         <h2>
           Hola ${nombre}!
