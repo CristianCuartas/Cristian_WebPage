@@ -12,8 +12,7 @@ const mg = mailgun({
   apiKey: '95e1870cef2949acfa95626e6d5841db-e470a504-edb08715',
   domain: DOMAIN
 });
-
-const pathHeroku = 'https://cristianwebpage.herokuapp.com/';
+const resolve = require('path').resolve;
 
 module.exports = function() {
   router.get('/', (req, res) => {
@@ -81,7 +80,11 @@ module.exports = function() {
         </div>
       </div>
       `;
+      /*
+Url de la imgen del servidor en el src de la img
 
+Path absoluto en node para acceder a la carpeta
+*/
       const outputUser = `
     <div style="width: 100%;
       box-shadow: 1px 1px 14px #ccc;">
@@ -97,15 +100,37 @@ module.exports = function() {
       </div>
     </div>
       `;
+      // const dataAdmin = {
+      //   from:
+      //     '"CH | Contact" <postmaster@sandboxeb686e4318a2442386457d2702d8c47f.mailgun.org>',
+      //   to: 'ccuartashz@gmail.com',
+      //   subject: 'CH | Cristian Hernandez Contact Request',
+      //   html: outputAdmin,
+      //   inline: `${pathHeroku}Imagenes/footer-img.png`
+      // };
+
       const dataAdmin = {
         from:
           '"CH | Contact" <postmaster@sandboxeb686e4318a2442386457d2702d8c47f.mailgun.org>',
         to: 'ccuartashz@gmail.com',
         subject: 'CH | Cristian Hernandez Contact Request',
         html: outputAdmin,
-        inline: `${pathHeroku}Imagenes/footer-img.png`
+        inline: resolve('./../../public/Imagenes/footer-img.png')
       };
 
+      // const mailOptions = {
+      //   from: `"CH | Contact" ${USER_EMAIL}`, // sender address
+      //   to: `${correo}`, // list of receivers
+      //   subject: 'CH | Cristian Hernandez Solicitud de Contacto', // Subject line
+      //   html: outputUser, // html body,
+      //   attachments: [
+      //     {
+      //       filename: 'Pickle_rick.png',
+      //       path: `${pathHeroku}Imagenes/Pickle_rick.png`,
+      //       cid: 'Pickle_rick.png' //same cid value as in the html img src
+      //     }
+      //   ]
+      // };
       const mailOptions = {
         from: `"CH | Contact" ${USER_EMAIL}`, // sender address
         to: `${correo}`, // list of receivers
@@ -114,7 +139,7 @@ module.exports = function() {
         attachments: [
           {
             filename: 'Pickle_rick.png',
-            path: `${pathHeroku}Imagenes/Pickle_rick.png`,
+            path: resolve('./../../public/Imagenes/Pickle_rick.png'),
             cid: 'Pickle_rick.png' //same cid value as in the html img src
           }
         ]
@@ -151,6 +176,7 @@ module.exports = function() {
         })
           .then(mensaje => res.redirect('/#mis-trabajos'))
           .catch(error => console.log(error));
+
         //Mailgun
         mg.messages().send(dataAdmin, function(error, body) {
           console.log(body);
