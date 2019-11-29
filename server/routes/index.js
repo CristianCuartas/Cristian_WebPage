@@ -17,6 +17,7 @@ const resolve = require('path').resolve;
 module.exports = function() {
   router.get('/', (req, res) => {
     res.render('index');
+    // console.log(resolve('public/Imagenes/Pickle_rick.png'));
   });
 
   /* Cuando se llena el formulario */
@@ -115,7 +116,7 @@ Path absoluto en node para acceder a la carpeta
         to: 'ccuartashz@gmail.com',
         subject: 'CH | Cristian Hernandez Contact Request',
         html: outputAdmin,
-        inline: resolve('./../../public/Imagenes/footer-img.png')
+        inline: resolve('public/Imagenes/footer-img.png')
       };
 
       // const mailOptions = {
@@ -139,7 +140,7 @@ Path absoluto en node para acceder a la carpeta
         attachments: [
           {
             filename: 'Pickle_rick.png',
-            path: resolve('./../../public/Imagenes/Pickle_rick.png'),
+            path: resolve('public/Imagenes/Pickle_rick.png'),
             cid: 'Pickle_rick.png' //same cid value as in the html img src
           }
         ]
