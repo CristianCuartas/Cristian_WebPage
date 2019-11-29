@@ -7,9 +7,11 @@ const nodemailer = require('nodemailer');
 const USER_EMAIL = 'ccuartashz@gmail.com';
 const PASS_EMAIL = 'ccuartas-zH0';
 const mailgun = require('mailgun-js');
-const DOMAIN = 'sandboxeb686e4318a2442386457d2702d8c47f.mailgun.org';
+const credentials = require('../config/credentials');
+
+const DOMAIN = credentials.DOMAIN_MAILGUN;
 const mg = mailgun({
-  apiKey: '95e1870cef2949acfa95626e6d5841db-e470a504-edb08715',
+  apiKey: credentials.API_KEY,
   domain: DOMAIN
 });
 const resolve = require('path').resolve;
@@ -101,6 +103,7 @@ Path absoluto en node para acceder a la carpeta
       </div>
     </div>
       `;
+
       // const dataAdmin = {
       //   from:
       //     '"CH | Contact" <postmaster@sandboxeb686e4318a2442386457d2702d8c47f.mailgun.org>',
@@ -119,19 +122,6 @@ Path absoluto en node para acceder a la carpeta
         inline: resolve('public/Imagenes/footer-img.png')
       };
 
-      // const mailOptions = {
-      //   from: `"CH | Contact" ${USER_EMAIL}`, // sender address
-      //   to: `${correo}`, // list of receivers
-      //   subject: 'CH | Cristian Hernandez Solicitud de Contacto', // Subject line
-      //   html: outputUser, // html body,
-      //   attachments: [
-      //     {
-      //       filename: 'Pickle_rick.png',
-      //       path: `${pathHeroku}Imagenes/Pickle_rick.png`,
-      //       cid: 'Pickle_rick.png' //same cid value as in the html img src
-      //     }
-      //   ]
-      // };
       const mailOptions = {
         from: `"CH | Contact" ${USER_EMAIL}`, // sender address
         to: `${correo}`, // list of receivers
@@ -180,7 +170,11 @@ Path absoluto en node para acceder a la carpeta
 
         //Mailgun
         mg.messages().send(dataAdmin, function(error, body) {
-          console.log(body);
+          try {
+            console.log(body);
+          } catch {
+            console.log(error);
+          }
         });
 
         transporter.sendMail(mailOptions, (error, info) => {
